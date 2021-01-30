@@ -1,0 +1,46 @@
+<div style="width: 400px; margin: auto">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="task.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="recurrency">Recurrency</label>
+        <input
+          class="form-control"
+          id="recurrency"
+          required
+          [(ngModel)]="task.recurrency"
+          name="recurrency"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="code">Code</label>
+        <input
+          class="form-control"
+          id="code"
+          required
+          [(ngModel)]="task.code"
+          name="code"
+        />
+      </div>
+
+      <button (click)="saveTask()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newTask()">Add</button>
+    </div>
+  </div>
+</div>
